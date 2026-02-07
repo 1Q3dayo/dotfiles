@@ -1,0 +1,12 @@
+---
+# Dotfiles role variables
+
+dotfiles_home: "{{ ansible_env.HOME }}"
+
+# List of dotfiles to copy from files/ directory
+# Example: [".bashrc", ".vimrc", ".gitconfig"]
+dotfiles_list: []
+
+# List of dotfiles to render from templates/ directory (without .j2 extension)
+# Example: [".zshrc", ".tmux.conf"]
+dotfiles_templates: []
