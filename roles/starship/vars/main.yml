@@ -1,2 +1,3 @@
 ---
-starship_dotfiles: []
+starship_dotfiles:
+  - starship.toml

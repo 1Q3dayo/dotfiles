@@ -1,2 +1,4 @@
 ---
-zellij_dotfiles: []
+zellij_dotfiles:
+  - config.kdl
+  - layouts/claude.kdl

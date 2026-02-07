@@ -1,2 +1,3 @@
 ---
-zsh_dotfiles: []
+zsh_dotfiles:
+  - .zshrc

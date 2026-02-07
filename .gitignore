@@ -1,0 +1,24 @@
+.DS_Store
+
+# バックアップファイル
+*.bak
+
+# codex - 認証情報・ランタイムデータ
+roles/codex/files/auth.json
+roles/codex/files/history.jsonl
+roles/codex/files/models_cache.json
+roles/codex/files/version.json
+roles/codex/files/.personality_migration
+roles/codex/files/sessions/
+roles/codex/files/log/
+roles/codex/files/tmp/
+roles/codex/files/skills/
+
+# gemini - 認証情報・ランタイムデータ
+roles/gemini/files/oauth_creds.json
+roles/gemini/files/google_accounts.json
+roles/gemini/files/google_account_id
+roles/gemini/files/installation_id
+roles/gemini/files/antigravity/
+roles/gemini/files/antigravity-browser-profile/
+roles/gemini/files/tmp/

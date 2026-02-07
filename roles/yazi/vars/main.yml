@@ -1,2 +1,3 @@
 ---
-yazi_dotfiles: []
+yazi_dotfiles:
+  - yazi.toml

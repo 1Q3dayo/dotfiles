@@ -1,0 +1,32 @@
+layout {
+    tab name="main" {
+        pane size=1 borderless=true {
+            plugin location="tab-bar"
+        }
+        pane split_direction="vertical" {
+            pane split_direction="horizontal" size="60%" {
+                pane {
+                    command "yazi"
+                }
+                pane {
+                    command "lazygit"
+                }
+            }
+            pane size="40%" {
+                command "/Users/setch/.local/bin/claude"
+            }
+        }
+        pane size=2 borderless=true {
+            plugin location="status-bar"
+        }
+    }
+    tab name="zsh" {
+        pane size=1 borderless=true {
+            plugin location="tab-bar"
+        }
+        pane
+        pane size=2 borderless=true {
+            plugin location="status-bar"
+        }
+    }
+}
