@@ -25,10 +25,37 @@ ansible-playbook playbooks/dotfiles.yml -v
 
 ## Architecture
 
-- **Static dotfiles**: Place in `roles/dotfiles/files/` and add to `dotfiles_list` in `roles/dotfiles/vars/main.yml`
-- **Template dotfiles**: Place `.j2` files in `roles/dotfiles/templates/` and add (without .j2) to `dotfiles_templates` in vars
+ツール別にAnsibleロールを分割して管理しています。各ロールは以下の構造を持ちます：
 
-The playbook copies files to `$HOME` with backup enabled.
+```
+roles/<tool>/
+  files/          ← dotfilesを配置
+  tasks/main.yml  ← copy タスク
+  vars/main.yml   ← ファイルリストの定義（<tool>_dotfiles 変数）
+```
+
+### 対象ロール
+
+| ロール | デプロイ先 | タグ |
+|--------|-----------|------|
+| zsh | `$HOME/` | `zsh` |
+| starship | `$HOME/.config/starship/` | `starship` |
+| zellij | `$HOME/.config/zellij/` | `zellij` |
+| yazi | `$HOME/.config/yazi/` | `yazi` |
+| lazygit | `$HOME/.config/lazygit/` | `lazygit` |
+| claude | `$HOME/.claude/` | `claude` |
+| codex | `$HOME/.codex/` | `codex` |
+| gemini | `$HOME/.gemini/` | `gemini` |
+
+### dotfilesの追加方法
+
+1. `roles/<tool>/files/` にファイルを配置
+2. `roles/<tool>/vars/main.yml` の `<tool>_dotfiles` リストにファイル名を追加
+
+特定のツールのみデプロイする場合は `--tags` を使用：
+```bash
+ansible-playbook playbooks/dotfiles.yml --tags zsh
+```
 
 ## Skills
 

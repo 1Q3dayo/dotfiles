@@ -1,0 +1,15 @@
+---
+- name: Ensure yazi config directory exists
+  ansible.builtin.file:
+    path: "{{ ansible_facts.env.HOME }}/.config/yazi"
+    state: directory
+    mode: '0755'
+
+- name: Deploy yazi dotfiles
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_facts.env.HOME }}/.config/yazi/{{ item | basename }}"
+    mode: '0644'
+    backup: yes
+  loop: "{{ yazi_dotfiles }}"
+  when: yazi_dotfiles | length > 0

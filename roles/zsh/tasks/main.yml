@@ -1,0 +1,9 @@
+---
+- name: Deploy zsh dotfiles
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_facts.env.HOME }}/{{ item | basename }}"
+    mode: '0644'
+    backup: yes
+  loop: "{{ zsh_dotfiles }}"
+  when: zsh_dotfiles | length > 0

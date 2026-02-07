@@ -1,0 +1,15 @@
+---
+- name: Ensure starship config directory exists
+  ansible.builtin.file:
+    path: "{{ ansible_facts.env.HOME }}/.config/starship"
+    state: directory
+    mode: '0755'
+
+- name: Deploy starship dotfiles
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_facts.env.HOME }}/.config/starship/{{ item | basename }}"
+    mode: '0644'
+    backup: yes
+  loop: "{{ starship_dotfiles }}"
+  when: starship_dotfiles | length > 0
