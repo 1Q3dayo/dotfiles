@@ -9,7 +9,7 @@
   ansible.builtin.copy:
     src: "{{ item }}"
     dest: "{{ ansible_facts.env.HOME }}/.codex/{{ item | basename }}"
-    mode: '0644'
+    mode: '0600'
     backup: yes
   loop: "{{ codex_dotfiles }}"
   when: codex_dotfiles | length > 0

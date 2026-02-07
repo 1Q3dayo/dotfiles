@@ -8,7 +8,7 @@
     - { role: starship, tags: ['starship'] }
     - { role: zellij, tags: ['zellij'] }
     - { role: yazi, tags: ['yazi'] }
-    - { role: lazygit, tags: ['lazygit'] }
+#    - { role: lazygit, tags: ['lazygit'] }
     - { role: claude, tags: ['claude'] }
     - { role: codex, tags: ['codex'] }
     - { role: gemini, tags: ['gemini'] }
