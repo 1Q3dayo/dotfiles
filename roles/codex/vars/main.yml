@@ -1,2 +1,3 @@
 ---
-codex_dotfiles: []
+codex_dotfiles:
+  - config.toml

@@ -1,2 +1,4 @@
 ---
-gemini_dotfiles: []
+gemini_dotfiles:
+  - GEMINI.md
+  - settings.json

@@ -5,10 +5,20 @@
     state: directory
     mode: '0755'
 
+- name: Ensure zellij subdirectories exist
+  ansible.builtin.file:
+    path: "{{ ansible_facts.env.HOME }}/.config/zellij/{{ item | dirname }}"
+    state: directory
+    mode: '0755'
+  loop: "{{ zellij_dotfiles }}"
+  when:
+    - zellij_dotfiles | length > 0
+    - item | dirname | length > 0
+
 - name: Deploy zellij dotfiles
   ansible.builtin.copy:
     src: "{{ item }}"
-    dest: "{{ ansible_facts.env.HOME }}/.config/zellij/{{ item | basename }}"
+    dest: "{{ ansible_facts.env.HOME }}/.config/zellij/{{ item }}"
     mode: '0644'
     backup: yes
   loop: "{{ zellij_dotfiles }}"
