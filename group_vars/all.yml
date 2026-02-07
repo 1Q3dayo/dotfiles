@@ -1,0 +1,10 @@
+---
+# Global variables for all hosts
+
+# User information
+user_name: "{{ ansible_user_id }}"
+user_home: "{{ ansible_env.HOME }}"
+
+# Git configuration (customize these)
+git_user_name: ""
+git_user_email: ""
