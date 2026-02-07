@@ -1,0 +1,15 @@
+---
+- name: Ensure gemini config directory exists
+  ansible.builtin.file:
+    path: "{{ ansible_facts.env.HOME }}/.gemini"
+    state: directory
+    mode: '0755'
+
+- name: Deploy gemini dotfiles
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_facts.env.HOME }}/.gemini/{{ item | basename }}"
+    mode: '0644'
+    backup: yes
+  loop: "{{ gemini_dotfiles }}"
+  when: gemini_dotfiles | length > 0

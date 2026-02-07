@@ -1,0 +1,16 @@
+---
+- name: Ensure zellij config directory exists
+  ansible.builtin.file:
+    path: "{{ ansible_facts.env.HOME }}/.config/zellij"
+    state: directory
+    mode: '0755'
+
+- name: Deploy zellij dotfiles
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_facts.env.HOME }}/.config/zellij/{{ item | basename }}"
+    mode: '0644'
+    backup: yes
+  loop: "{{ zellij_dotfiles }}"
+  when: zellij_dotfiles | length > 0
+
