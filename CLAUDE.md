@@ -36,4 +36,5 @@ The playbook copies files to `$HOME` with backup enabled.
 
 - **code-review** (`/code-review`): コードレビューを実施。品質・セキュリティ・パフォーマンス・テスタビリティの観点で分析する
 - **codex** (`/codex`): OpenAI Codex CLIと連携し、別の視点からコードレビューや分析を依頼する
+- **create-pr** (`/create-pr`): ghコマンドでプルリクエストを作成。`.github/PULL_REQUEST_TEMPLATE.md` に沿った本文を自動生成する
 - **example-skill**: 新しいスキルを作成する際のテンプレート
