@@ -16,6 +16,7 @@ Ansibleを使ってローカルマシンにdotfilesをデプロイするリポ�
 | claude | Claude Code | `$HOME/.claude/` |
 | codex | OpenAI Codex CLI | `$HOME/.codex/` |
 | gemini | Google Gemini CLI | `$HOME/.gemini/` |
+| ghostty | ターミナルエミュレータ | `$HOME/Library/Application Support/com.mitchellh.ghostty/` |
 
 ## 前提条件
 
