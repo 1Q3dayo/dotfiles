@@ -46,6 +46,7 @@ roles/<tool>/
 | claude | `$HOME/.claude/` | `claude` |
 | codex | `$HOME/.codex/` | `codex` |
 | gemini | `$HOME/.gemini/` | `gemini` |
+| ghostty | `$HOME/Library/Application Support/com.mitchellh.ghostty/` | `ghostty` |
 
 ### dotfilesの追加方法
 

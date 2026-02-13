@@ -12,3 +12,4 @@
     - { role: claude, tags: ['claude'] }
     - { role: codex, tags: ['codex'] }
     - { role: gemini, tags: ['gemini'] }
+    - { role: ghostty, tags: ['ghostty'] }
